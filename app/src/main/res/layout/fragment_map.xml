@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <View
+            android:id="@+id/view_cross"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:background="@drawable/twotone_games_black_18dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="top|center"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                
+                <FrameLayout
+                    android:layout_weight="1"
+                    android:id="@+id/topBarPlaceholder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="" />
+                <ImageButton
+                    android:id="@+id/searchPlaceButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/round_zoom_in_black_24dp"
+                    android:background="@drawable/rounded"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd="5dp"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:behavior_fitToContents="true"
+        app:behavior_hideable="true"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bottom_bar_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="100dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="17dp"
+                android:background="@drawable/bar_resize_control"
+                app:layout_constraintBottom_toTopOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:text="Event name"
+                app:layout_constraintBottom_toTopOf="@+id/editEventName"
+                app:layout_constraintEnd_toEndOf="@+id/editEventName"
+                app:layout_constraintStart_toStartOf="@+id/editEventName"
+                app:layout_constraintTop_toTopOf="@+id/view" />
+
+            <EditText
+                android:id="@+id/editEventName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toTopOf="@+id/editEventDescription"
+                app:layout_constraintEnd_toStartOf="@+id/createEventButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <ImageButton
+                android:id="@+id/createEventButton"
+                android:layout_width="36dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="#FFFFFF"
+                android:src="@drawable/baseline_done_black_36dp"
+                app:layout_constraintBottom_toBottomOf="@+id/editEventName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editEventName" />
+
+            <EditText
+                android:id="@+id/editEventDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/editEventDate"
+                app:layout_constraintEnd_toEndOf="@+id/editEventName"
+                app:layout_constraintStart_toStartOf="@+id/editEventName"
+                app:layout_constraintTop_toBottomOf="@+id/editEventName" />
+
+            <include
+                android:id="@+id/include"
+                layout="@layout/tags_chips"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/editEventName"
+                app:layout_constraintStart_toStartOf="@+id/editEventName"
+                app:layout_constraintTop_toBottomOf="@+id/editEventDescription" />
+
+            <EditText
+                android:id="@+id/editEventDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:inputType="date"
+                app:layout_constraintBottom_toTopOf="@+id/editText2"
+                app:layout_constraintEnd_toEndOf="@+id/editEventName"
+                app:layout_constraintStart_toStartOf="@+id/editEventName"
+                app:layout_constraintTop_toBottomOf="@+id/include" />
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:inputType="time"
+                app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+                app:layout_constraintEnd_toEndOf="@+id/editEventName"
+                app:layout_constraintStart_toStartOf="@+id/editEventName"
+                app:layout_constraintTop_toBottomOf="@+id/editEventDate" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/editEventName"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/editEventName"
+                app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+            <TextView
+                android:id="@+id/envtDescriptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Event description"
+                app:layout_constraintBottom_toTopOf="@+id/editEventDescription"
+                app:layout_constraintEnd_toEndOf="@+id/editEventDescription"
+                app:layout_constraintStart_toStartOf="@+id/editEventDescription"
+                app:layout_constraintTop_toBottomOf="@+id/editEventName" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Event date"
+                app:layout_constraintBottom_toTopOf="@+id/editEventDate"
+                app:layout_constraintEnd_toEndOf="@+id/editEventDate"
+                app:layout_constraintStart_toStartOf="@+id/editEventDate"
+                app:layout_constraintTop_toBottomOf="@+id/editEventDescription" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:text="Edit time"
+                app:layout_constraintEnd_toEndOf="@+id/editText2"
+                app:layout_constraintStart_toStartOf="@+id/editText2"
+                app:layout_constraintTop_toTopOf="@+id/editEventDate" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

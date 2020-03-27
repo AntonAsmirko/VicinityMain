@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.EventDescriptionFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"
+        app:cardCornerRadius="20dp">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/eventName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:text="TextView"
+                    android:textSize="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/myCardView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="20dp"
+                    app:cardCornerRadius="50dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/eventName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/eventName"
+                    app:layout_constraintTop_toTopOf="@+id/eventName">
+
+                    <ImageView
+                        android:id="@+id/roundedimage"
+                        android:layout_width="96dp"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+                </androidx.cardview.widget.CardView>
+
+                <ImageButton
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/rounded"
+                    android:src="@drawable/baseline_chat_white_36dp"
+                    app:layout_constraintBottom_toTopOf="@+id/chipGroupHolder"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/eventName" />
+
+                <HorizontalScrollView
+                    android:id="@+id/chipGroupHolder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="40dp"
+                    android:scrollbarStyle="insideOverlay"
+                    android:scrollbars="none"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/eventName"
+                    app:layout_constraintVertical_bias="0.060000002">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:singleLine="true">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/choice1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="yo" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/choice2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="hello" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/choice3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="hello" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/choice4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="hello" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/choice5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="hello" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/choice6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="hello" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/choice7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="hello" />
+                    </com.google.android.material.chip.ChipGroup>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/text_event_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="In android, ScrollView is a kind of layout which is useful to add a vertical or horizontal scroll bars to the content which is larger than actual size of layouts such as linearlayout, relativelayout, framelayout, etc.
+
+
+
+Generally, the android ScrollView is useful when we have a content that doesn’t fit to our android app layout screen. The ScrollView will enable a scroll to the content which is exceeding the screen layout and allow users to see the complete content by scrolling.
+
+
+
+The android ScrollView can hold only one direct child. In case, if we want to add multiple views within the scroll view, then we need to include them in another standard layout like linearlayout, relativelayout, framelayout, etc.
+
+
+
+To enable scrolling for our android applications, ScrollView is the best option but we should not use ScrollView along with ListView or Gridview because they both will take care of their own vertical scrolling.
+
+
+
+In android, ScrollView supports only vertical scrolling. In case, if we want to implement horizontal scrolling, then we need to use HorizontalScrollView component.
+
+
+
+The android ScrollView is having property called android:fillViewport, which is used to define whether the ScrollView should stretch it’s content to fill the viewport or not.
+
+
+
+Now we will see how to use ScrollView with linearlayout to enable scroll view to the content which is larger than screen layout in android application with examples.
+
+"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/chipGroupHolder"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/event_adress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="TextView"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/text_event_description"
+                    app:layout_constraintStart_toStartOf="@+id/text_event_description"
+                    app:layout_constraintTop_toBottomOf="@+id/text_event_description"
+                    app:layout_constraintVertical_bias="0.060000002" />
+
+                <TextView
+                    android:id="@+id/event_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="TextView"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/event_adress"
+                    app:layout_constraintStart_toStartOf="@+id/event_adress"
+                    app:layout_constraintTop_toBottomOf="@+id/event_adress"
+                    app:layout_constraintVertical_bias="0.060000002" />
+
+                <TextView
+                    android:id="@+id/event_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="TextView"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/event_adress"
+                    app:layout_constraintStart_toStartOf="@+id/event_adress"
+                    app:layout_constraintTop_toBottomOf="@+id/event_adress"
+                    app:layout_constraintVertical_bias="0.060000002" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "163116249263",
+    "firebase_url": "https://vicinity-cd9f0.firebaseio.com",
+    "project_id": "vicinity-cd9f0",
+    "storage_bucket": "vicinity-cd9f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:163116249263:android:c4185708741b814329645a",
+        "android_client_info": {
+          "package_name": "com.anton.vicinity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "163116249263-2md9bh0hnic0riilerrn2hp5q903i74h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anton.vicinity",
+            "certificate_hash": "83af9aabe03a369135ace886fa57fd572a6b9dbf"
+          }
+        },
+        {
+          "client_id": "163116249263-n494co9b1eiqphim7kjju44eas9c2aci.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5TYfZ3-uoQqfUUnL9zVevRHyJJNSWaOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "163116249263-n494co9b1eiqphim7kjju44eas9c2aci.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
